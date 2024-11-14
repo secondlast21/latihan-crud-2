@@ -7,6 +7,8 @@ import { AddPost } from "../_components/add-post";
 export default async function Home() {
   const session = await auth();
 
+  console.log(session)
+
   if (session?.user) {
     void api.post.getAllByUser.prefetch();
   }
